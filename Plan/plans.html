@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plans — Plan</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="sidebar-brand">
+        <span class="sidebar-logo">◉</span>
+        <span class="sidebar-brand-text">Day Planner</span>
+      </div>
+      <div class="sidebar-links">
+        <a href="index.html" class="nav-btn">
+          <span class="nav-icon">◉</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+        <a href="add-task.html" class="nav-btn">
+          <span class="nav-icon">+</span>
+          <span class="nav-label">Add Task</span>
+        </a>
+        <a href="plans.html" class="nav-btn active" aria-current="page">
+          <span class="nav-icon">☰</span>
+          <span class="nav-label">Plans</span>
+        </a>
+        <a href="insight.html" class="nav-btn">
+          <span class="nav-icon">◈</span>
+          <span class="nav-label">Insights</span>
+        </a>
+        <a href="timer.html" class="nav-btn">
+          <span class="nav-icon">◷</span>
+          <span class="nav-label">Timer</span>
+        </a>
+        <a href="data.html" class="nav-btn">
+          <span class="nav-icon">↻</span>
+          <span class="nav-label">Data</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="page-header">
+        <h2>View Plans</h2>
+      </div>
+      <div class="view-toolbar">
+        <input id="search-input" type="search" placeholder="Search tasks" />
+        <select id="filter-select">
+          <option value="all">All tasks</option>
+          <option value="active">Active</option>
+          <option value="completed">Completed</option>
+          <option value="urgent">Urgent</option>
+        </select>
+        <select id="sort-select">
+          <option value="date">Sort by date</option>
+          <option value="urgent">Sort by urgency</option>
+          <option value="status">Sort by status</option>
+        </select>
+        <div class="view-toggle">
+          <button type="button" class="secondary-btn active" data-view="table">Table</button>
+          <button type="button" class="secondary-btn" data-view="calendar">Calendar</button>
+          <button type="button" class="secondary-btn" data-view="board">Board</button>
+        </div>
+      </div>
+      <div class="view-surface active" id="table-view">
+        <div class="table-wrap">
+          <table class="task-table">
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Task</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Notes</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="task-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="view-surface" id="calendar-view">
+        <div class="calendar-toolbar">
+          <div class="calendar-nav">
+            <button type="button" class="secondary-btn calendar-nav-btn" data-calendar-nav="prev-year">&laquo;</button>
+            <button type="button" class="secondary-btn calendar-nav-btn" data-calendar-nav="prev-month">&lsaquo;</button>
+            <div id="calendar-month-label" class="calendar-month-label"></div>
+            <button type="button" class="secondary-btn calendar-nav-btn" data-calendar-nav="next-month">&rsaquo;</button>
+            <button type="button" class="secondary-btn calendar-nav-btn" data-calendar-nav="next-year">&raquo;</button>
+          </div>
+          <button type="button" class="secondary-btn" id="calendar-today-btn">Today</button>
+        </div>
+        <div id="calendar-grid" class="calendar-grid"></div>
+        <div id="calendar-detail" class="calendar-detail"></div>
+      </div>
+      <div class="view-surface" id="board-view">
+        <div id="board-columns" class="board-columns"></div>
+      </div>
+    </main>
+  </div>
+
+  <p id="status-message" class="status-message hidden" aria-live="polite"></p>
+  <script src="js/store.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/plans.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Plan</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="sidebar-brand">
+        <span class="sidebar-logo">◉</span>
+        <span class="sidebar-brand-text">Day Planner</span>
+      </div>
+      <div class="sidebar-links">
+        <a href="index.html" class="nav-btn active" aria-current="page">
+          <span class="nav-icon">◉</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+        <a href="add-task.html" class="nav-btn">
+          <span class="nav-icon">+</span>
+          <span class="nav-label">Add Task</span>
+        </a>
+        <a href="plans.html" class="nav-btn">
+          <span class="nav-icon">☰</span>
+          <span class="nav-label">Plans</span>
+        </a>
+        <a href="insight.html" class="nav-btn">
+          <span class="nav-icon">◈</span>
+          <span class="nav-label">Insights</span>
+        </a>
+        <a href="timer.html" class="nav-btn">
+          <span class="nav-icon">◷</span>
+          <span class="nav-label">Timer</span>
+        </a>
+        <a href="data.html" class="nav-btn">
+          <span class="nav-icon">↻</span>
+          <span class="nav-label">Data</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <header class="hero reveal">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">PLAN · TRACK · COMPLETE</p>
+          <h1>Build a better day.</h1>
+          <p class="hero-text">
+            Add tasks, track progress, keep urgent work visible, and build a calm rhythm around your goals.
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="primary-btn" id="quick-add-cta">Quick add focus task</button>
+            <button type="button" class="secondary-btn" id="jump-to-view">Open plan board</button>
+          </div>
+        </div>
+        <div class="summary-card reveal">
+          <div class="summary-stat">
+            <span id="task-count">0</span>
+            <small>tasks</small>
+          </div>
+          <div class="summary-stat">
+            <span id="done-count">0</span>
+            <small>done</small>
+          </div>
+          <div class="summary-stat">
+            <span id="urgent-count">0</span>
+            <small>urgent</small>
+          </div>
+        </div>
+      </header>
+
+      <section class="panel top-band reveal">
+        <div class="focus-row">
+          <div class="focus-card reveal">
+            <p class="mini-label">Focus streak</p>
+            <div id="streak-count" class="focus-value">0</div>
+            <p class="focus-caption">days in a row</p>
+          </div>
+          <div class="focus-card accent reveal">
+            <p class="mini-label">Today</p>
+            <div id="today-progress" class="focus-value">0%</div>
+            <p class="focus-caption">completed</p>
+          </div>
+          <div class="focus-card">
+            <p class="mini-label">Next up</p>
+            <div id="next-task" class="focus-value">&mdash;</div>
+            <p class="focus-caption">urgent or due soon</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel reveal">
+        <div class="dashboard-page-header">
+          <h2>Overview</h2>
+        </div>
+        <div class="dashboard-grid" id="dashboard-grid"></div>
+      </section>
+
+      <section class="panel reveal">
+        <div class="dashboard-page-header">
+          <h2>XP &amp; Rewards</h2>
+        </div>
+        <div id="xp-summary" class="xp-summary"></div>
+        <div id="rewards-list" class="rewards-list"></div>
+      </section>
+
+      <div id="motivation-banner" class="motivation-banner hidden"></div>
+    </main>
+  </div>
+
+  <p id="status-message" class="status-message hidden" aria-live="polite"></p>
+  <script src="js/store.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.checkbox-group {
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.checkbox-group input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.quick-add-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 16px 0 10px;
+}
+
+.quick-add-btn {
+  background: var(--surface-card);
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--hairline);
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}
